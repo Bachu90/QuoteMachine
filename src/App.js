@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   handleFetch = (e) => {
-    fetch("http://quotes.stormconsultancy.co.uk/random.json")
+    fetch("https://quotes.stormconsultancy.co.uk/random.json")
       .then(response => response.json())
       .then(json => this.setState({
         sentence: json
