@@ -1,25 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+const Quote = props => {
+  return (
+    <div>
+      <p>{props.sentence.quote}</p>
+      <p>{props.sentence.author}</p>
+    </div>
+  )
+}
+
 class App extends Component {
+
+  state = {
+    sentence: {
+      quote: 'Loading....',
+      author: ''
+    }
+  }
+
+  handleFetch = () => {
+    fetch("http://quotes.stormconsultancy.co.uk/random.json")
+      .then(response => response.json())
+      .then(json => this.setState({
+        sentence: json
+      }));
+  }
+
+  componentWillMount() {
+    this.handleFetch();
+  }
+
   render() {
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1>Quote Machine</h1>
+        <Quote sentence={this.state.sentence} />
+        <button onClick={this.handleFetch}>Fetch</button>
       </div>
     );
   }
