@@ -1,32 +1,74 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c0deed;
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+h1 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 56px;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#quote-box {
+  width: 50vw;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 5vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#text {
+  font-size: 24px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#author {
+  text-align: right;
+  font-style: italic;
+  color: #666;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#author::before {
+  content: "-";
+  margin: 0 3px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#new-quote, #tweet-quote {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #c0deed;
+  border-style: none;
+  border-radius: 10px;
+  box-shadow: 0 0 0px 3px #fff, 0 0 0px 6px #c0deed;
+  text-decoration: none;
+  text-shadow: 1px 1px #000;
+  cursor: pointer; 
+}
+
+#new-quote:hover, #tweet-quote:hover{
+  box-shadow: 0 0 0px 5px #fff, 0 0 0px 8px #c0deed;
 }

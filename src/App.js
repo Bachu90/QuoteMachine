@@ -4,8 +4,17 @@ import './App.css';
 const Quote = props => {
   return (
     <div>
-      <p>{props.sentence.quote}</p>
-      <p>{props.sentence.author}</p>
+      <p id="text">{props.sentence.quote}</p>
+      <p id="author">{props.sentence.author}</p>
+    </div>
+  )
+}
+
+const Buttons = props => {
+  return (
+    <div className="buttons">
+      <span id="new-quote" onClick={props.handleFetch}>New quote</span>
+      <a href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22${props.sentence.quote}%22%20${props.sentence.author}`} target="_blank" rel="noopener noreferrer" id="tweet-quote">Tweet</a>
     </div>
   )
 }
@@ -19,7 +28,7 @@ class App extends Component {
     }
   }
 
-  handleFetch = () => {
+  handleFetch = (e) => {
     fetch("http://quotes.stormconsultancy.co.uk/random.json")
       .then(response => response.json())
       .then(json => this.setState({
@@ -34,11 +43,13 @@ class App extends Component {
   render() {
 
     return (
-      <div>
+      <>
         <h1>Quote Machine</h1>
-        <Quote sentence={this.state.sentence} />
-        <button onClick={this.handleFetch}>Fetch</button>
-      </div>
+        <div id="quote-box">
+          <Quote sentence={this.state.sentence} />
+          <Buttons sentence={this.state.sentence} handleFetch={this.handleFetch} />
+        </div>
+      </>
     );
   }
 }
