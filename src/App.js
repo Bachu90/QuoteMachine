@@ -80,11 +80,9 @@ class App extends Component {
   render() {
     const { quotes, index } = this.state;
     return (
-      <>
-        <div className="wrapper">
-          <QuoteBox quotes={quotes} index={index} nextQuote={this.nextQuote} />
-        </div>
-      </>
+      <div className="wrapper">
+        <QuoteBox quotes={quotes} index={index} nextQuote={this.nextQuote} />
+      </div>
     );
   }
 }
