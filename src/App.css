@@ -6,69 +6,107 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #c0deed;
-  font-family: 'Ubuntu', sans-serif;
-  text-align: center;
+html {
+  font-size: 10px;
 }
 
-h1 {
-  margin-top: 100px;
-  text-align: center;
-  font-size: 56px;
-  color: #fff;
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+  background-image: url('./img/plume-2428666_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  text-shadow: 1px 1px 1px #666;
 }
 
 #quote-box {
-  width: 50vw;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 5vw;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(220,220,220,0.6);
+  padding: 10vh 5vw;
+}
+
+.quotes {
+  opacity: 1;
+  transition: opacity .6s;
+}
+
+.quotes.hidden {
+  opacity: 0;
 }
 
 #text {
-  font-size: 24px;
+  font-size: 3rem;
   text-align: left;
+  padding: 20px 0;
 }
 
-#author {
-  text-align: right;
-  font-style: italic;
+#text i {
+  font-size: 1.6rem;
   color: #666;
-  margin-top: 20px;
-  margin-bottom: 40px;
 }
 
-#author::before {
-  content: "-";
-  margin: 0 3px;
+i.fa-quote-left {
+  padding-right: 10px;
+}
+
+i.fa-quote-right {
+  padding-left: 10px;
+}
+#author {
+  font-size: 2rem;
+  color: #666;
+  font-style: italic;
+  text-align: right;
+  padding: 20px 0;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-around;
 }
 
-#new-quote, #tweet-quote {
-  padding: 10px 20px;
-  font-size: 16px;
+#tweet-quote {
+  display: block;
+}
+
+#tweet-quote i {
+  font-size: 4rem;
+  color: #00aced;
+  transition: color .2s;
+}
+
+#tweet-quote i:hover {
+  color: #0084b4;
+}
+
+#new-quote {
+  display: block;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #666;
   color: #fff;
-  font-weight: bold;
-  background-color: #c0deed;
-  border-style: none;
-  border-radius: 10px;
-  box-shadow: 0 0 0px 3px #fff, 0 0 0px 6px #c0deed;
-  text-decoration: none;
-  text-shadow: 1px 1px #000;
-  cursor: pointer; 
+  font-size: 2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: box-shadow .3s;
+  outline: none;
+  position: relative;
+  left: -20px;
 }
 
-#new-quote:hover, #tweet-quote:hover{
-  box-shadow: 0 0 0px 5px #fff, 0 0 0px 8px #c0deed;
+#new-quote:hover {
+  box-shadow: 0 0 2px 2px #333;
+}
+
+.loading {
+  font-size: 2.5rem;
+  text-align: center;
 }
