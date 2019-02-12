@@ -25,7 +25,7 @@ html {
 }
 
 #quote-box {
-  width: 100%;
+  width: 90%;
   max-width: 800px;
   background-color: rgba(220,220,220,0.6);
   padding: 10vh 5vw;
