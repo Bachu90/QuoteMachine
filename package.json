@@ -2,6 +2,7 @@
   "name": "quotemachine",
   "author": "Grzegorz Bach",
   "version": "0.1.0",
+  "description": "Famous random quotes generator",
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
